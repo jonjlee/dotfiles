@@ -1,0 +1,24 @@
+# Easier navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Shortcuts
+alias d="cd $DEV_HOME"
+alias dl="cd ~/Downloads"
+
+# List all files colorized in long format, including dot files
+alias ls="ls -G"
+alias ll="ls -lah"
+
+# Always enable colored `grep` output
+alias grep='grep --color=auto'
+
+# Empty the Trash on all mounted volumes and the main HDD.
+# Also, clear Apple’s System Logs to improve shell startup speed.
+# Finally, clear download history from quarantine. https://mths.be/bum
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+# URL-encode strings
+alias urle='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
